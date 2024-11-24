@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+// import './App.css'
+// import Cabecalho from './assets/Cabecalho'
+// import Cards from './assets/Cards'
+// import Rodape from './assets/Rodape'
+
+
+// function App() {
+//     return (
+//         <>
+//             <Cabecalho />
+//             <div className="espacamento">
+//                 <Cards />
+//             </div>
+//             <Rodape />
+//         </>
+//     );
+// }
+
+// export default App;
+
+import './App.css';
+import Cabecalho from './assets/Cabecalho';
+import Rodape from './assets/Rodape';
+import Read from './assets/Read';
+import Create from './assets/Create';
+import Delete from './assets/Delete';
+import Cards from './assets/Cards';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <Router>
+            <>
+                <Cabecalho />
+                
+                <div className="espacamento">
+                    <Routes>
+                        <Route path="/" element={<Cards />} />
+                        <Route path="/read" element={<Read />} />
+                        <Route path="/create" element={<Create />} />
+                        <Route path="/delete" element={<Delete />} />
+                    </Routes>
+                </div>
+                
+                <Rodape />
+            </>
+        </Router>
+    );
 }
 
-export default App
+export default App;
