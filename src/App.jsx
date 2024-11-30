@@ -1,24 +1,4 @@
 
-// import './App.css'
-// import Cabecalho from './assets/Cabecalho'
-// import Cards from './assets/Cards'
-// import Rodape from './assets/Rodape'
-
-
-// function App() {
-//     return (
-//         <>
-//             <Cabecalho />
-//             <div className="espacamento">
-//                 <Cards />
-//             </div>
-//             <Rodape />
-//         </>
-//     );
-// }
-
-// export default App;
-
 import './App.css';
 import Cabecalho from './assets/Cabecalho';
 import Rodape from './assets/Rodape';
@@ -29,6 +9,8 @@ import Cards from './assets/Cards';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
+
+
     return (
         <Router>
             <>

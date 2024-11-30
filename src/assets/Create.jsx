@@ -1,79 +1,84 @@
 import './Create.css';
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
+import app from '../services/Firestore'
+
+import {
+    getFirestore,
+    collection,
+    addDoc
+} from "firebase/firestore";
+
 
 export default function Create() {
-    // Estados para armazenar os valores dos campos
-    const [formData, setFormData] = useState({
-        nome: '',
-        rg: '',
-        dataNascimento: '',
-        email: '',
-        telefone: '',
-        endereco: '',
-        estadoCivil: ''
-    });
 
-    // Função para mudanças nos campos do formulário
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value
-        }));
-    };
 
-    // Função para o envio do formulário
-    const handleSubmit = (e) => {
+    const [nome, setNome] = useState("")
+    const [registroGeral, setRegistroGeral] = useState("")
+    const [email, setEmail] = useState("")
+    const [telefone, setTelefone] = useState("")
+    const [endereco, setEndereco] = useState("")
+
+    const db = getFirestore(app);
+
+    async function criarDado(e) {
         e.preventDefault();
-        console.log('Dados do funcionário:', formData);
-    };
+        try {
+            const funcionario = await addDoc(collection(db, "funcionarios"), {
+                email,
+                endereco,
+                nome,
+                registroGeral,
+                telefone
+            });
+            alert("Dados salvos com sucesso!", funcionario);
+            setEmail("");
+            setEndereco("");
+            setNome("");
+            setRegistroGeral("");
+            setTelefone("");
+        } catch (e) {
+            alert("Erro ao adicionar documento! ", e);
+        }
+    }
+
 
     return (
         <div className="createContainer">
             <h2>Adicionar Funcionário</h2>
-            <form onSubmit={handleSubmit} className="createForm">
+            <form onSubmit={criarDado} className="formC">
                 <label>
                     Nome:
                     <input
                         type="text"
                         name="nome"
-                        value={formData.nome}
-                        onChange={handleChange}
+                        value={nome}
+                        onChange={(e) => setNome(e.target.value)}
                         required
-                    placeholder='Seu nome'/>
+                        placeholder='Nome completo' />
                 </label>
 
                 <label>
                     Registro Geral:
                     <input
                         type="text"
-                        name="rg"
-                        value={formData.rg}
-                        onChange={handleChange}
+                        name="registroGeral"
+                        value={registroGeral}
+                        onChange={(e) => setRegistroGeral(e.target.value)}
                         required
-                    placeholder='12.345.678-9'/>
+                        placeholder='12.345.678-9' />
                 </label>
 
-                <label>
-                    Data de Nascimento:
-                    <input
-                        type="date"
-                        name="dataNascimento"
-                        value={formData.dataNascimento}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
 
                 <label>
                     E-mail:
                     <input
                         type="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
-                    placeholder='email@gmail.com'/>
+                        placeholder='email@gmail.com' />
                 </label>
 
                 <label>
@@ -81,10 +86,10 @@ export default function Create() {
                     <input
                         type="tel"
                         name="telefone"
-                        value={formData.telefone}
-                        onChange={handleChange}
+                        value={telefone}
+                        onChange={(e) => setTelefone(e.target.value)}
                         required
-                    placeholder='11 1 1111-1111'/>
+                        placeholder='11 1 1111-1111' />
                 </label>
 
                 <label>
@@ -92,27 +97,12 @@ export default function Create() {
                     <input
                         type="text"
                         name="endereco"
-                        value={formData.endereco}
-                        onChange={handleChange}
+                        value={endereco}
+                        onChange={(e) => setEndereco(e.target.value)}
                         required
-                    placeholder='Rua XYZ, 111 - Cidade'/>
+                        placeholder='Rua XYZ, 111 - Cidade' />
                 </label>
 
-                <label>
-                    Estado Civil:
-                    <select
-                        name="estadoCivil"
-                        value={formData.estadoCivil}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="">Selecione</option>
-                        <option value="solteiro">Solteiro(a)</option>
-                        <option value="casado">Casado(a)</option>
-                        <option value="divorciado">Divorciado(a)</option>
-                        <option value="viuvo">Viúvo(a)</option>
-                    </select>
-                </label>
 
                 <button type="submit">Adicionar</button>
             </form>

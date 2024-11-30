@@ -5,28 +5,6 @@
     justify-content: center;
     padding: 20px;
 }
-
-.readContent {
-    width: 300%;
-    height: 360px;
-    /* border: 2px solid; */
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.readButton {
-    width: 150px;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: indigo;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.readButton:hover {
-    background-color: #7a2399;
+.funcionarioCard{
+    margin: 20px;
 }
