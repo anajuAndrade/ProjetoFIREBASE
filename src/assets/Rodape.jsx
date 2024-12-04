@@ -1,9 +1,10 @@
-import './Rodape.css';
-import { Link } from 'react-router-dom';
+import './Rodape.css'
+import { Link } from 'react-router-dom'
 
 export default function Rodape() {
     return (
         <footer>
+
             <div className="itemRodape">
                 <h3>Links Rápidos</h3>
                 <ul>
@@ -13,6 +14,7 @@ export default function Rodape() {
                     <li><Link to="/delete">Deletar Funcionário</Link></li>
                 </ul>
             </div>
+
             <div className="itemRodape">
                 <h3>Desenvolvido por:</h3>
                 <ul>
@@ -21,6 +23,7 @@ export default function Rodape() {
                     <li>Paola Abrantes</li>
                 </ul>
             </div>
+            
         </footer>
     );
 }

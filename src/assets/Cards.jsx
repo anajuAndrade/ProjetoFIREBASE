@@ -1,5 +1,5 @@
-import './Cards.css';
-import { Link } from 'react-router-dom';
+import './Cards.css'
+import { Link } from 'react-router-dom'
 
 export default function Cards() {
     return (
@@ -16,5 +16,3 @@ export default function Cards() {
         </section>
     );
 }
-
-

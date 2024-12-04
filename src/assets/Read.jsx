@@ -1,15 +1,15 @@
 
 import './Read.css'
 import app from '../services/Firestore'
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 import {
     collection,
     getFirestore,
     getDocs
 } from "firebase/firestore"
-export default function Read() {
 
+export default function Read() {
 
     const db = getFirestore(app);
     const funcionariosCollectionRef = collection(db, "funcionarios");
@@ -53,4 +53,5 @@ export default function Read() {
             </div>
         </>
     );
+    
 }

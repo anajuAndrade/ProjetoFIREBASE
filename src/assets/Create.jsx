@@ -1,17 +1,16 @@
-import './Create.css';
-import React from 'react';
-import { useState } from 'react';
+import './Create.css'
+import React from 'react'
+import { useState } from 'react'
 import app from '../services/Firestore'
 
 import {
     getFirestore,
     collection,
     addDoc
-} from "firebase/firestore";
+} from "firebase/firestore"
 
 
 export default function Create() {
-
 
     const [nome, setNome] = useState("")
     const [registroGeral, setRegistroGeral] = useState("")
@@ -108,4 +107,5 @@ export default function Create() {
             </form>
         </div>
     );
+    
 }
