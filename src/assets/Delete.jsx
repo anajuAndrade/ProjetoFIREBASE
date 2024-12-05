@@ -1,5 +1,5 @@
 import app from '../services/Firestore'
-import './Delete.css'
+import './style/Delete.css'
 
 import {
   getFirestore,

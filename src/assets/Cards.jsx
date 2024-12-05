@@ -1,4 +1,4 @@
-import './Cards.css'
+import './style/Cards.css'
 import { Link } from 'react-router-dom'
 
 export default function Cards() {

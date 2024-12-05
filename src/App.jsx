@@ -1,10 +1,10 @@
 import './App.css'
 import Cabecalho from './assets/Cabecalho'
-import Rodape from './assets/Rodape'
-import Read from './assets/Read'
-import Create from './assets/Create'
-import Delete from './assets/Delete'
-import Cards from './assets/Cards'
+import Rodape from './assets/Rodape.jsx'
+import Read from './assets/Read.jsx'
+import Create from './assets/Create.jsx'
+import Delete from './assets/Delete.jsx'
+import Cards from './assets/Cards.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {

@@ -1,4 +1,4 @@
-import './Rodape.css'
+import './style/Rodape.css'
 import { Link } from 'react-router-dom'
 
 export default function Rodape() {

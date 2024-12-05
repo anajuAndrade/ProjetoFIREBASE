@@ -1,5 +1,5 @@
 import logoMenu from './img/logoMenu.jpg'
-import './Cabecalho.css'
+import './style/Cabecalho.css'
 
 export default function Cabecalho(){
     return(
