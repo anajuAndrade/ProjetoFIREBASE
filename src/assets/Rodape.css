@@ -6,13 +6,15 @@ footer {
     align-items: flex-start;
     font-size: 0.7em;
     width: 100%;
+    flex-wrap: wrap;
 }
-.itemRodape{
+
+.itemRodape {
     flex: 1;
     text-align: center;
 }
 
-.itemRodape ul{
+.itemRodape ul {
     list-style: none;
     padding: 0;
 }
@@ -21,7 +23,41 @@ footer {
     margin-bottom: 5px;
 }
 
-.itemRodape a{
+.itemRodape a {
     text-decoration: none;
     color: inherit;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1em;
+    }
+
+    .itemRodape {
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    .itemRodape {
+        text-align: center;
+    }
+
+    .itemRodape h3 {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .itemRodape li {
+        margin-bottom: 8px;
+    }
 }

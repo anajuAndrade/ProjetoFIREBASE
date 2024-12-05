@@ -6,7 +6,7 @@ export default function Rodape() {
         <footer>
 
             <div className="itemRodape">
-                <h3>Links Rápidos</h3>
+                <h3>Links Rápidos:</h3>
                 <ul>
                     <li><Link to="/">Página inicial</Link></li>
                     <li><Link to="/read">Visualizar Funcionários</Link></li>

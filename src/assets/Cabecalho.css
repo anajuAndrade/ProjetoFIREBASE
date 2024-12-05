@@ -9,3 +9,26 @@
     height: auto; 
     display: inline-block;
 }
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    .cabecalho {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .logo {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho {
+        padding: 10px 0;
+    }
+
+    .logo {
+        width: 120px;
+    }
+}
