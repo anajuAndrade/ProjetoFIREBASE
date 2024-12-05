@@ -1,4 +1,3 @@
-
 import './App.css'
 import Cabecalho from './assets/Cabecalho'
 import Rodape from './assets/Rodape'
@@ -9,8 +8,6 @@ import Cards from './assets/Cards'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
-
-
     return (
         <Router>
             <>

@@ -7,9 +7,11 @@ export default function Cards() {
             <Link to="/read" className="card">
                 <div>Visualizar Funcionários</div>
             </Link>
+
             <Link to="/create" className="card">
                 <div>Adicionar Funcionário</div>
             </Link>
+            
             <Link to="/delete" className="card">
                 <div>Deletar Funcionário</div>
             </Link>
