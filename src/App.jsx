@@ -1,4 +1,4 @@
-import './App.css'
+import './assets/style/App.css'
 import Cabecalho from './assets/Cabecalho'
 import Rodape from './assets/Rodape.jsx'
 import Read from './assets/Read.jsx'
