@@ -48,7 +48,7 @@
     .card {
         width: 220px;
         height: 80px;
-        font-size: 1em;
+        font-size: 1.2em;
     }
 }
 
@@ -60,9 +60,7 @@
 
     .card {
         width: 90%;
-        max-width: 300px;
         height: 70px;
         font-size: 0.9em;
-        margin: 3px 0;
     }
 }

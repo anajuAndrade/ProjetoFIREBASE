@@ -9,7 +9,6 @@ import {
     addDoc
 } from "firebase/firestore"
 
-
 export default function Create() {
 
     const [nome, setNome] = useState("")
